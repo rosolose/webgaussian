@@ -1,0 +1,17 @@
+.content {
+	margin: 50px;
+	padding: 50px;
+	border: 1px solid #ddd;
+}
+.button {
+	margin: 20px;
+	width: 50px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #76a3b7;
+	padding: 5px;
+	cursor: pointer;
+}
+.viewer {
+	margin: 20px;
+}

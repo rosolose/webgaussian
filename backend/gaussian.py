@@ -87,7 +87,7 @@ def gaussian_train():
         if result[-1] == 1:
             continue
         if result[2] == 0:
-            command = ['ffmpeg', '-i', 'source_path', '-vf', '"setpts=0.2*PTS"', "source_path+'input_%4d.jpg'"]
+            command = ['ffmpeg', '-i', 'video_path', '-vf', '"setpts=0.2*PTS"', "video_path+'input_%4d.jpg'"]
             process = subprocess.run(command, stdout=subprocess.PIPE, text=True)
         srcfile = '/'.join(video_path.split('/')[:-1])
         copyfile(srcfile, 'gaussian_splatting/data/')

@@ -21,6 +21,15 @@ celery beat进行任务调度，定时将任务id装载进redis队列中。worke
 
 
 
+### 前端node.js
+
+```
+npm init #生成package.json
+npm install #node_modules
+```
+
+
+
 # 问题&解决
 
 ### 1.图片输入过少会创建文件夹，但是有可能无法进行COLMAP，数据库信息存在，导致无法处理。

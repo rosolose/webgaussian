@@ -2,14 +2,14 @@
 
 ## 一.环境配置
 
-**1.基础环境。**webgaussian运行需要配置3dgs所需要的环境。
+**1.基础环境**  webgaussian运行需要配置3dgs所需要的环境。
 
 ```
 cd backend/gaussian_splatting
 conda create env --file environment.yml
 ```
 
-**2.django后端。**webgaussian后端是以django框架进行开发，以celery进行定时任务启动训练,redis作为消息中间件(任务队列)
+**2.django后端 **  webgaussian后端是以django框架进行开发，以celery进行定时任务启动训练,redis作为消息中间件(任务队列)
 
 ```
 conda activate webgaussian
@@ -17,7 +17,7 @@ pip install django
 pip install celery
 ```
 
-**3.配置Redis。**    **https://github.com/tporadowski/redis/releases**
+**3.配置Redis**    **https://github.com/tporadowski/redis/releases**
 
 ```
 cd Redis
@@ -33,7 +33,7 @@ CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
 ```
 
-**4.数据库。**以mysql作为数据库存储用户上传数据，同时需要配置mysql并创建webgs数据库。
+**4.数据库**  以mysql作为数据库存储用户上传数据，同时需要配置mysql并创建webgs数据库。
 
 ```
 create database webgs;
@@ -52,7 +52,7 @@ celery -A backend worker -l info -P eventlet  #启动celery worker
 celery -A backend beat -l info    #启动celery beat
 ```
 
-**2.启动redis。**celery beat进行任务调度，定时将任务id装载进redis队列中。worker在队列的另一端取出任务id，并匹配当前注册的任务。
+**2.启动redis**  celery beat进行任务调度，定时将任务id装载进redis队列中。worker在队列的另一端取出任务id，并匹配当前注册的任务。
 
 ```
 cd Redis //也可以将redis路径放到环境变量path中，就不需要进入路径，可以直接输入指令
@@ -76,6 +76,7 @@ npm install #node_modules
 可以写一个bat脚本来直接启动，将path改为自己的路径
 
 ```
+#start.bat
 ::窗口1启动server
 start cmd /k "activate webgaussian && d: && cd path\webapp\backend && python manage.py runserver"
 ::窗口2 启动celery worker

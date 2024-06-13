@@ -164,8 +164,8 @@ CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
 
 # 定义定时任务
 CELERY_BEAT_SCHEDULE = {
-    'run-gaussian-every-1-minutes': {
+    'run-gaussian-every-5-minutes': {
         'task': 'ply.tasks.run_gaussian',
-        'schedule': 60,  # 5 minutes in seconds
+        'schedule': 300,  # 5 minutes in seconds
     },
 }
